@@ -17,6 +17,8 @@ while True:
 
     b = float(input('Wprowadz 2 liczbe: ')) 
 
+    #Liczby są zrobione przy użyciu float, żeby móc robić obliczenia z liczbami po przecinku
+    
     znak = input('Podaj znak działania jakiego bedziesz wykonywac : ')
 
     #Dodawanie
