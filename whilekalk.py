@@ -41,6 +41,11 @@ while True:
         print("Podałeś zły znak!")
     
     #Możliwość ponownego policzenia bez ponownego uruchomienia
-    once_again = input('Czy chcesz ponownie obliczyć jakąś liczbe? (y/n): ')
-    if once_again.lower() != 'y':
-        break #Zakończy program jeśli użytkownik wybierze nie
+    while True:
+        once_again = input('Czy chcesz ponownie obliczyć jakąś liczbe? (y/n): ')
+        if once_again.lower() == 'y':
+            break #Ponownie załaduje kalkulator
+        elif once_again.lower() == 'n':
+            exit() #zakonczenie programu
+        else:
+            print('Nie prawidłowy znak.')
