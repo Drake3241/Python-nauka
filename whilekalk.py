@@ -1,4 +1,8 @@
 #Kalkulator do podstawowych obliczen z wykorzystaniem pętli while true
+
+#Zaciagniecie biblioteki matematycznej żeby była możliwosc pierwiastkowania.
+import math 
+
 print('********Witaj na swoim Pythonowym Kalkulatorze********')
 print(' ')
 print('Dozwolone znaki: ')
@@ -7,19 +11,23 @@ print('Odejmowanie to " - " ')
 print('Mnożenie to " * " ')
 print('Dzielenie to " / " ')
 print('Potegowanie to " ** " ')
+print('Pierwiastkowanie to "sqrt"')
 print(' ')
 print('****Zaczynamy****')
 print(' ')
 
 while True:
-
-    a = float(input('Wprowadz 1 liczbe: '))
-
-    b = float(input('Wprowadz 2 liczbe: ')) 
-
-    #Liczby są zrobione przy użyciu float, żeby móc robić obliczenia z liczbami po przecinku
-    
+   
     znak = input('Podaj znak działania jakiego bedziesz wykonywac : ')
+
+    if znak == 'sqrt':
+        c = float(input('Wprowadz liczbe: ')) 
+    else:
+        a = float(input('Wprowadz 1 liczbe: '))
+
+        b = float(input('Wprowadz 2 liczbe: ')) 
+
+    #Liczby są zrobione przy użyciu float, żeby móc robić obliczenia z liczbami po przecinku. Jeśli nie ma takiej potrzeby można użyć int zamiast float.
 
     #Dodawanie
     if znak == '+':
@@ -32,10 +40,19 @@ while True:
         print(a * b)
     #Dzielenie
     elif znak == '/':
-        print(a / b)
+        if b != 0:
+            print(a/b)
+        else:    
+            print("Nie można dzielić przez zero.")
     #Potęgowanie
     elif znak == '**':
         print(a ** b)
+    #Pierwiastkowanie
+    elif znak == 'sqrt':
+        if a >= 0:
+            print(math.sqrt(a))
+        else:
+            print('Nie można obliczyć pierwiastka z liczby ujemnej.')
     #Błedny znak
     else:
         print("Podałeś zły znak!")
